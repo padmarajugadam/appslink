@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ( 'docker build' ) {
             steps {
-                sh '''docker build . -t  padmarajug/appslink:latest'''
+                sh '''docker build . -t  padmarajug/appslink:1.0'''
             }
         }
         stage ( 'push image' ) {
@@ -11,7 +11,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhubUNPWD', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                 sh '''
                   docker login -u $USER -p $PASS registry.hub.docker.com/
-                  docker push padmarajug/appslink:latest '''
+                  docker push padmarajug/appslink:1.0 '''
                   
                
                 }
