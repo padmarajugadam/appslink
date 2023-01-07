@@ -1,5 +1,5 @@
 pipeline {
-
+agent none
     stages {
         stage ('docker build') {
             steps {
@@ -8,3 +8,4 @@ pipeline {
         }
     }
 }
+
