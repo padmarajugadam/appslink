@@ -14,7 +14,7 @@ pipeline {
                   docker login -u $USER -p $PASS registry.hub.docker.com/
                   //docker.withRegistry("http://${registry_url}", "dockerhubUNPWD") {
                   docker push padmarajug/appslink:latest '''
-                  }
+                  
                
                 }
             }
