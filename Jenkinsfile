@@ -9,9 +9,9 @@ pipeline {
         stage ( 'push image' ) {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhubUNPWD', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                def regUrl = "index.docker.io"
+               // def regUrl = "index.docker.io"
                 sh '''
-                  docker login -u $USER -p $PASS ${regUrl} 
+                  docker login -u $USER -p $PASS index.docker.io 
                   docker push padmarajug/appslink:latest
                 '''
                 }
